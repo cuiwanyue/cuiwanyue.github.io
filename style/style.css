@@ -1,0 +1,26 @@
+@charset "UTF-8";
+/*
+ * 自定义样式
+ */
+body {
+  background-color: #dddddd; }
+
+header {
+  width: 100%;
+  height: 10%;
+  background: #363636; }
+  header h1 {
+    float: left; }
+  header .nav-group li {
+    display: inline; }
+
+main {
+  width: 100%;
+  height: 80%; }
+
+footer {
+  width: 100%;
+  height: 10%;
+  background: black; }
+
+/*# sourceMappingURL=style.css.map */

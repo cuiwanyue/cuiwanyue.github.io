@@ -1,0 +1,33 @@
+/*
+ * 自定义样式
+ */
+$header-bagd-col: hsl(0°, 0.0%, 21.2%);
+$body-bagd-col: hsl(0°, 0.0%, 86.7%);
+$black: hsl(0°, 0.0%, 0.0%);
+$btn-bagd-col: hsl(345°, 100.0%, 0.8%);
+body {
+  background-color: $body-bagd-col;
+}
+header {
+  width: 100%;
+  height: 10%;
+  background: $header-bagd-col;
+  h1 {
+    float: left;
+  }
+  .nav-group {
+    li {
+    display: inline;
+    }
+  }
+}
+
+main {
+  width: 100%;
+  height: 80%;
+}
+footer {
+  width: 100%;
+  height: 10%;
+  background: hsl(0°, 0.0%, 0.0%);
+}
