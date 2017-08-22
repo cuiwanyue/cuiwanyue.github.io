@@ -10,9 +10,10 @@
 }
 $white: hsl(0°, 0.0%, 100.0%);
 $black: hsl(0°, 0.0%, 0.0%);
-$btn-bagd-col: hsl(345°, 100.0%, 0.8%);
+$btn-bagd-col: hsl(204°, 100.0%, 50.0%);
 body {
   background: darken($white, 13.7%);
+  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 header {
   width: 100%;
@@ -77,12 +78,22 @@ main {
     table {
       border-collapse: collapse;
       thead {
-        background: darken($white, 70%);;
+        background: darken($white, 70%);
         color: $white;
+        font-size:1.1em;
+        text-align:center;
+        padding-top:5px;
+        padding-bottom:4px;
       }
       table, th, td {
-        border: 1px solid $white;
+        border: 1px solid darken($white, 40%);
+        font-size:1em;
+        padding:3px 7px 2px 7px;
       }
+      tr.alt td {
+        background: darken($white, 20%);
+      }
+
       tfoot {
         background: darken($white, 30%);
       }
@@ -91,15 +102,17 @@ main {
 }
 nav {
   @include article-base;
-  background: darken($white, 60%);
+  background: lighten($btn-bagd-col, 40%);
   form {
-    margin-left: 400px;
-    tfoot {
-      input {
+    margin-left: 100px;
+      input[type=submit] {
+        border: none;
         background: $btn-bagd-col;
-      }
-    } 
-    td {
+        width: 100%;
+        border-radius: 5px;
+
+      } 
+    td:first-child {
       text-align: right;
     }
   }
@@ -108,4 +121,7 @@ footer {
   width: 100%;
   height: 10%;
   background: $black;
+  color: $white;
+  text-align: center;
+  font-size: .5em;
 }

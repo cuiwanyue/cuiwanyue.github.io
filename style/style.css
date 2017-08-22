@@ -3,7 +3,8 @@
  * 自定义样式
  */
 body {
-  background: gainsboro; }
+  background: gainsboro;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; }
 
 header {
   width: 100%;
@@ -33,9 +34,9 @@ main {
     border: 1px solid black;
     box-shadow: 2px 2px 3px #363636;
     transform: rotate(1deg);
-    background: linear-gradient(#040300, white); }
+    background: linear-gradient(#6600ff, white); }
   main .secondArticle {
-    background: radial-gradient(circle, #040001, white);
+    background: radial-gradient(circle, #0099ff, white);
     width: 96%;
     margin: 4% 1%;
     padding: 1% 1%;
@@ -52,7 +53,7 @@ main {
     padding: 1% 1%;
     border: 1px solid black;
     box-shadow: 2px 2px 3px #363636;
-    background: rgba(4, 0, 1, 0.1); }
+    background: rgba(0, 153, 255, 0.1); }
     main .picture-group ul {
       list-style: none; }
       main .picture-group ul figure {
@@ -72,9 +73,17 @@ main {
       border-collapse: collapse; }
       main .book-list table thead {
         background: #4d4d4d;
-        color: white; }
+        color: white;
+        font-size: 1.1em;
+        text-align: center;
+        padding-top: 5px;
+        padding-bottom: 4px; }
       main .book-list table table, main .book-list table th, main .book-list table td {
-        border: 1px solid white; }
+        border: 1px solid #999999;
+        font-size: 1em;
+        padding: 3px 7px 2px 7px; }
+      main .book-list table tr.alt td {
+        background: #cccccc; }
       main .book-list table tfoot {
         background: #b3b3b3; }
 
@@ -84,17 +93,23 @@ nav {
   padding: 1% 1%;
   border: 1px solid black;
   box-shadow: 2px 2px 3px #363636;
-  background: #666666; }
+  background: #ccebff; }
   nav form {
-    margin-left: 400px; }
-    nav form tfoot input {
-      background: #040001; }
-    nav form td {
+    margin-left: 100px; }
+    nav form input[type=submit] {
+      border: none;
+      background: #0099ff;
+      width: 100%;
+      border-radius: 5px; }
+    nav form td:first-child {
       text-align: right; }
 
 footer {
   width: 100%;
   height: 10%;
-  background: black; }
+  background: black;
+  color: white;
+  text-align: center;
+  font-size: .5em; }
 
 /*# sourceMappingURL=style.css.map */
