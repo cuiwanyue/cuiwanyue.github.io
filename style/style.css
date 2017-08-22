@@ -35,7 +35,7 @@ main {
     transform: rotate(1deg);
     background: linear-gradient(#040300, white); }
   main .secondArticle {
-    background: radial-gradient(circle, #e3d5d5, white);
+    background: radial-gradient(circle, #040001, white);
     width: 96%;
     margin: 4% 1%;
     padding: 1% 1%;
@@ -46,6 +46,51 @@ main {
       color: #4d4d4d; }
     main .secondArticle ul {
       list-style: none; }
+  main .picture-group {
+    width: 96%;
+    margin: 4% 1%;
+    padding: 1% 1%;
+    border: 1px solid black;
+    box-shadow: 2px 2px 3px #363636;
+    background: rgba(4, 0, 1, 0.1); }
+    main .picture-group ul {
+      list-style: none; }
+      main .picture-group ul figure {
+        width: 600px;
+        height: 600px;
+        border: 1px solid black;
+        text-align: center;
+        background: white; }
+  main .book-list {
+    width: 96%;
+    margin: 4% 1%;
+    padding: 1% 1%;
+    border: 1px solid black;
+    box-shadow: 2px 2px 3px #363636;
+    background: #e6e6e6; }
+    main .book-list table {
+      border-collapse: collapse; }
+      main .book-list table thead {
+        background: #4d4d4d;
+        color: white; }
+      main .book-list table table, main .book-list table th, main .book-list table td {
+        border: 1px solid white; }
+      main .book-list table tfoot {
+        background: #b3b3b3; }
+
+nav {
+  width: 96%;
+  margin: 4% 1%;
+  padding: 1% 1%;
+  border: 1px solid black;
+  box-shadow: 2px 2px 3px #363636;
+  background: #666666; }
+  nav form {
+    margin-left: 400px; }
+    nav form tfoot input {
+      background: #040001; }
+    nav form td {
+      text-align: right; }
 
 footer {
   width: 100%;

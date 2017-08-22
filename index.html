@@ -12,7 +12,7 @@
 		<ul class="nav-group">
 			<li class="wangyi"><a href="http://music.163.com/">网易云音乐</a></li>
 			<li class="baidu"><a href="https://www.baidu.com/">百度</a></li>
-			<li class="shopping"><a href="https://www.taobao.com/">淘宝</a></li>
+			<li class="shopping"><a href="https://juejin.im/">掘金</a></li>
 			<li class="improve"><a href="http://www.w3school.com.cn">W3school</a></li>
 		</ul>
 	</header>
@@ -48,9 +48,9 @@
 				<li>学个简单的小框架vue</li>
 			</ul>
 		</div>
-		<div>
-			<h2>给大家看一些好看的照片</h2>
-				<ul style="list-style:none;">
+		<div class="picture-group">
+			<h2>给大家看一些好看的照片:</h2>
+				<ul>
 					<li>
 						<figure>
 							<figcaption>好看的照片1：</figcaption>
@@ -66,7 +66,7 @@
 					<li>
 						<figure>
 							<figcaption>好看的照片3：</figcaption>
-							<img src="./images/4.jpg" alt='我是一张漂亮的图片'>
+							<img src="./static/images/4.jpg" alt='我是一张漂亮的图片'>
 						</figure>
 					</li>
 					<li>
@@ -77,7 +77,7 @@
 					</li>
 				</ul>
 		</div>
-		<div>
+		<div class="book-list">
 			<h2>我看过的书</h2>
 			<div>推荐给你</div>
 			<span>根据看得时间排列</span>
@@ -87,41 +87,41 @@
 				<li>摆渡人</li>
 				<li>你的孤独 虽败犹荣</li>
 			</ol>
+			<figure>
+				<figcaption>下面是个表格</figcaption>
+				<table>
+					<thead>
+						<tr>
+							<th>花</th>
+							<th>画</th>
+							<th>对比</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>美</td>
+							<td rowspan='2'>一样美</td>
+							<td><a href='http://music.163.com/#/my/m/music/playlist?id=872203054'>点击</a></td>
+						</tr>
+						<tr>
+							<td>香</td>
+							<td><a href='http://music.163.com/#/my/m/music/playlist?id=872203054'>点击</a></td>
+						</tr>
+						<tr>
+							<td>短暂</td>
+							<td>长久</td>
+							<td><a href='http://music.163.com/#/my/m/music/playlist?id=872203054'>点击</a></td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan='2'>喜欢这个</td>
+							<td>也喜欢这个</td>
+						</tr>
+					</tfoot>
+				</table>
+			</figure>
 		</div>
-		<figure>
-			<figcaption>下面是个表格</figcaption>
-			<table border='1'>
-				<thead>
-					<tr>
-						<th>花</th>
-						<th>画</th>
-						<th>对比</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>美</td>
-						<td rowspan='2'>一样美</td>
-						<td><a href='http://music.163.com/#/my/m/music/playlist?id=872203054'>点击</a></td>
-					</tr>
-					<tr>
-						<td>香</td>
-						<td><a href='http://music.163.com/#/my/m/music/playlist?id=872203054'>点击</a></td>
-					</tr>
-					<tr>
-						<td>短暂</td>
-						<td>长久</td>
-						<td><a href='http://music.163.com/#/my/m/music/playlist?id=872203054'>点击</a></td>
-					</tr>
-				</tbody>
-				<tfoot>
-					<tr>
-						<td colspan='2'>喜欢这个</td>
-						<td>也喜欢这个</td>
-					</tr>
-				</tfoot>
-			</table>
-		</figure>
 	</main>
 		<nav>
 			<form>
@@ -185,14 +185,14 @@
 								<textarea rows="3" cols="30">The cat was playing in the garden. </textarea>
 							</td>
 						</tr>
+					</tbody>
+					<tfoot>
 						<tr>
 							<td colspan="2">
-							<input type="button" value="submit">
 							<input type="submit" value="submit">
-							<input type="reset" value="重置">
 							</td>
 						</tr>
-					</tbody>
+					</tfoot>
 				</table>
 			</form>	
 		</nav>

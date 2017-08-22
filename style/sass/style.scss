@@ -46,7 +46,7 @@ main {
     background: linear-gradient(adjust-hue($btn-bagd-col, 60deg), adjust-hue($white, 90deg));
   }
   .secondArticle {
-    background: radial-gradient(circle, saturate(darken($white, 13.7%), 20%), $white);
+    background: radial-gradient(circle, saturate($btn-bagd-col, 30%), $white);
     @include article-base;
     transform: rotate(-2deg);
     h3{
@@ -56,9 +56,56 @@ main {
       list-style: none;
     }
   }
+  .picture-group {
+    @include article-base;
+    background: transparentize($btn-bagd-col, 0.9);
+    ul {
+       list-style: none;
+       figure {
+         width: 600px;
+         height: 600px;
+         border: 1px solid $black;
+         text-align: center;
+         background: $white;
+
+       }
+    }
+  }
+  .book-list {
+    @include article-base;
+    background: darken($white, 10%);
+    table {
+      border-collapse: collapse;
+      thead {
+        background: darken($white, 70%);;
+        color: $white;
+      }
+      table, th, td {
+        border: 1px solid $white;
+      }
+      tfoot {
+        background: darken($white, 30%);
+      }
+    }
+  }
+}
+nav {
+  @include article-base;
+  background: darken($white, 60%);
+  form {
+    margin-left: 400px;
+    tfoot {
+      input {
+        background: $btn-bagd-col;
+      }
+    } 
+    td {
+      text-align: right;
+    }
+  }
 }
 footer {
   width: 100%;
   height: 10%;
-  background: hsl(0°, 0.0%, 0.0%);
+  background: $black;
 }
