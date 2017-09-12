@@ -66,8 +66,8 @@ main {
     main .picture-group ul {
       list-style: none; }
       main .picture-group ul figure {
-        width: 600px;
-        height: 600px;
+        width: 900px;
+        height: 900px;
         border: 1px solid black;
         text-align: center;
         background: white; }
