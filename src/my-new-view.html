@@ -1,0 +1,25 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-checkbox/paper-checkbox.html">
+<dom-module id="my-new-view">
+  <!-- 定义元素的样式和本地 DOM -->
+  <template>
+    <style>
+      :host {
+        display: block;
+
+        padding: 16px;
+      }
+    </style>
+
+    <h1>新视图</h1>
+    <paper-checkbox>Hello World!</paper-checkbox>
+  </template>
+  <script>
+    // 您的新元素扩展 Polymer.Element 基类
+    class MyNewView extends Polymer.Element {
+      static get is() { return 'my-new-view'; }
+    }
+    //现在，注册您的新的自定义元素，以便浏览器能使用它
+    customElements.define(MyNewView.is, MyNewView);
+  </script>
+</dom-module>
