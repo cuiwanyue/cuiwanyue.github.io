@@ -1,202 +1,205 @@
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
 <dom-module id="my-new-view">
   <!-- 定义元素的样式和本地 DOM -->
   <template>
-    <style>
+    <style include="shared-styles">
       :host {
         display: block;
 
         padding: 16px;
       }
     </style>
-　　<div class="book-list">
-			<h2>我看过的书</h2>
-			<span>根据看得时间排列</span>
-			<ol>
-				<li>再美也美不过想象</li>
-				<li>不曾走过 怎会懂得</li>
-				<li>人生永远没有太晚的开始</li>
-				<li>偷影子的人</li>
-				<li>摆渡人</li>
-				<li>你的孤独 虽败犹荣</li>
-				<li>解忧杂货店</li>
-				<li>追风筝的人</li>
-				<li>傲慢与偏见(在读中。。。)</li>
-        <li>番茄工作法图解：简单易行的时间管理方法(正在读。。。)</li>
-			</ol>
-			<ol>
-				<li>The Little Prince</li>
-				<li>Pride And prejudice</li>
-				<li>The Lion, The Witch And The Wardrobe</li>
-				<li>Robinson Crusoe</li>
-				<li>Aesop's Fables</li>
-				<li>Oscar Wilde Selected Stories(Reading now)</li>
-				<li>Grimms' Selected Fairy Tales(Next book)</li>
-			</ol>
-			<figure>
-				<figcaption>下面是一天一句表格</figcaption>
-				<table>
-					<thead>
-						<tr>
-							<th>one day</th>
-							<th>an aphorism</th>
-							<th>translate</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td></td>
-							<td>Do not judge by appearances</td>
-							<td>人不可貌相</td>
-						</tr>
-						<tr class="alt">
-							<td></td>
-							<td>Prepare today for the needs of tomorrow</td>
-							<td>未雨绸缪</td>
-						</tr>
-						<tr>
-							<td></td>
-							<td>By hurt yourself to get revenge on another</td>
-							<td>害人终害己</td>
-						</tr>
-						<tr class="alt">
-							<td>Sep.13.2017</td>
-							<td>Perseverance is not a long race;it is many short races one after the other</td>
-							<td>坚韧不在于你跑得多长，而是你能坚持跑完一段又一段</td>
-						</tr>
-						<tr>
-							<td>Sep.14.2017</td>
-							<td>We should never look so high that we miss seeing the things around us</td>
-							<td>我们仰望星空的时候，也不能忘记脚踏实地</td>
-						</tr>
-						<tr class="alt">
-							<td>Sep.15.2017</td>
-							<td>Whatever you do, do with all your strength</td>
-							<td>无论做什么都要全力以赴</td>
-						</tr>
-						<tr>
-							<td>Sep.16.2017</td>
-							<td>Knowing is not enough; we must apply. Willing is not enough; we must do</td>
-							<td>知不如用，想不如做</td>
-						</tr>
-						<tr class="alt">
-							<td>Sep.17.2017</td>
-							<td>Either you run the day or the day runs you</td>
-							<td>你不好好过日子，日子就会把你搞的团团转</td>
-						</tr>
-						<tr>
-							<td>Sep.18.2017</td>
-							<td>Old habits die hard</td>
-							<td>故习难改</td>
-						</tr>
-						<tr class="alt">
-							<td>Sep.19.2017</td>
-							<td>。。。</td>
-							<td>。。。</td>
-						</tr>
-					</tbody>
-					<tfoot>
-						<tr>
-							<td rowspan='2'></td>
-							<td>Do not attempt too much at once</td>
-							<td>人心不足蛇吞象</td>
-						</tr>
-					</tfoot>
-				</table>
-			</figure>
+　  <div class="card">
+			<div class="book-list">
+				<h2>我看过的书</h2>
+				<span>根据看得时间排列</span>
+				<ol>
+					<li>再美也美不过想象</li>
+					<li>不曾走过 怎会懂得</li>
+					<li>人生永远没有太晚的开始</li>
+					<li>偷影子的人</li>
+					<li>摆渡人</li>
+					<li>你的孤独 虽败犹荣</li>
+					<li>解忧杂货店</li>
+					<li>追风筝的人</li>
+					<li>傲慢与偏见(在读中。。。)</li>
+					<li>番茄工作法图解：简单易行的时间管理方法(正在读。。。)</li>
+				</ol>
+				<ol>
+					<li>The Little Prince</li>
+					<li>Pride And prejudice</li>
+					<li>The Lion, The Witch And The Wardrobe</li>
+					<li>Robinson Crusoe</li>
+					<li>Aesop's Fables</li>
+					<li>Oscar Wilde Selected Stories(Reading now)</li>
+					<li>Grimms' Selected Fairy Tales(Next book)</li>
+				</ol>
+				<figure>
+					<figcaption>下面是一天一句表格</figcaption>
+					<table>
+						<thead>
+							<tr>
+								<th>one day</th>
+								<th>an aphorism</th>
+								<th>translate</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td></td>
+								<td>Do not judge by appearances</td>
+								<td>人不可貌相</td>
+							</tr>
+							<tr class="alt">
+								<td></td>
+								<td>Prepare today for the needs of tomorrow</td>
+								<td>未雨绸缪</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>By hurt yourself to get revenge on another</td>
+								<td>害人终害己</td>
+							</tr>
+							<tr class="alt">
+								<td>Sep.13.2017</td>
+								<td>Perseverance is not a long race;it is many short races one after the other</td>
+								<td>坚韧不在于你跑得多长，而是你能坚持跑完一段又一段</td>
+							</tr>
+							<tr>
+								<td>Sep.14.2017</td>
+								<td>We should never look so high that we miss seeing the things around us</td>
+								<td>我们仰望星空的时候，也不能忘记脚踏实地</td>
+							</tr>
+							<tr class="alt">
+								<td>Sep.15.2017</td>
+								<td>Whatever you do, do with all your strength</td>
+								<td>无论做什么都要全力以赴</td>
+							</tr>
+							<tr>
+								<td>Sep.16.2017</td>
+								<td>Knowing is not enough; we must apply. Willing is not enough; we must do</td>
+								<td>知不如用，想不如做</td>
+							</tr>
+							<tr class="alt">
+								<td>Sep.17.2017</td>
+								<td>Either you run the day or the day runs you</td>
+								<td>你不好好过日子，日子就会把你搞的团团转</td>
+							</tr>
+							<tr>
+								<td>Sep.18.2017</td>
+								<td>Old habits die hard</td>
+								<td>故习难改</td>
+							</tr>
+							<tr class="alt">
+								<td>Sep.19.2017</td>
+								<td>。。。</td>
+								<td>。。。</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td rowspan='2'></td>
+								<td>Do not attempt too much at once</td>
+								<td>人心不足蛇吞象</td>
+							</tr>
+						</tfoot>
+					</table>
+				</figure>
+			</div>
+			<h1>小把戏</h1>
+			<div class="picture-group">
+				<h2>给大家看一些好看的照片:</h2>
+					<ul>
+						<li>
+							<figure>
+								<figcaption>好看的照片1：</figcaption>
+								<img src="./static/images/Watermelon.jpg">
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<figcaption>好看的照片2：</figcaption>
+								<img src="./static/images/Minions.jpg">
+							</figure>
+						</li>
+						<li>
+							<figure>
+								<figcaption>好看的照片3：</figcaption>
+								<img src="./static/images/4.jpg" alt='我是一张漂亮的图片'>
+							</figure>
+						</li>
+					</ul>
+			</div>
+			<nav>
+				<form>
+					<table>
+						<caption>欢迎注册</caption>
+						<tbody>
+							<tr>
+								<td>请输入邮箱：</td>
+								<td><input type="text" placeholder="××××@11111.com" required="required" name="email"></td>
+							</tr>
+							<tr>
+								<td>请输入密码：</td>
+								<td><input type="password" name="password" placeholder="密码请为6-16位英文数字"></td>
+							</tr>
+							<tr>
+								<td>请重复输入密码：</td>
+								<td><input type="password" name="password" value="这是一个文本输入框"></td>
+							</tr>
+							<tr>
+								<td>性别：</td>
+								<td>
+									<label for='man'>男</label>
+									<input id="man" type="radio" checked="checked" name="sex" />
+									<label>女<input id="woman" type="radio"  name="sex"/></label>
+								</td>
+							</tr>
+							<tr>
+								<td>城市：</td>
+								<td>
+									<select name="city" id="city">
+										<option value="beijing">北京</option>
+										<option value="shanghai" selected="selected">上海</option>
+										<option value="guangzhou">广州</option>
+										<option value="shenzhen">深圳</option>
+										<option value="luoyang">洛阳</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>爱好：</td>
+								<td>
+									<input type="checkbox">跑步
+									<input type="checkbox">唱歌
+									<input type="checkbox">跳舞
+									<input type="checkbox">学习
+									<input type="checkbox">其他
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<fieldset>
+										<legend>健康信息</legend>
+										身高：<input type="text" />
+										体重：<input type="text" />
+									</fieldset>
+								</td>
+							</tr>
+							<tr>
+								<td>个人描述：</td>
+								<td>
+									<textarea rows="3" cols="30">The cat was playing in the garden. </textarea>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<input type="submit" value="submit">
+				</form>	
+			</nav>
+			<footer>版权所有@@luna</footer>
 		</div>
-    <h1>小把戏</h1>
-    <div class="picture-group">
-			<h2>给大家看一些好看的照片:</h2>
-				<ul>
-					<li>
-						<figure>
-							<figcaption>好看的照片1：</figcaption>
-							<img src="./static/images/Watermelon.jpg">
-						</figure>
-					</li>
-					<li>
-						<figure>
-							<figcaption>好看的照片2：</figcaption>
-							<img src="./static/images/Minions.jpg">
-						</figure>
-					</li>
-					<li>
-						<figure>
-							<figcaption>好看的照片3：</figcaption>
-							<img src="./static/images/4.jpg" alt='我是一张漂亮的图片'>
-						</figure>
-					</li>
-				</ul>
-    </div>
-    <nav>
-			<form>
-				<table>
-					<caption>欢迎注册</caption>
-					<tbody>
-						<tr>
-							<td>请输入邮箱：</td>
-							<td><input type="text" placeholder="××××@11111.com" required="required" name="email"></td>
-						</tr>
-						<tr>
-							<td>请输入密码：</td>
-							<td><input type="password" name="password" placeholder="密码请为6-16位英文数字"></td>
-						</tr>
-						<tr>
-							<td>请重复输入密码：</td>
-							<td><input type="password" name="password" value="这是一个文本输入框"></td>
-						</tr>
-						<tr>
-							<td>性别：</td>
-							<td>
-								<label for='man'>男</label>
-								<input id="man" type="radio" checked="checked" name="sex" />
-								<label>女<input id="woman" type="radio"  name="sex"/></label>
-							</td>
-						</tr>
-						<tr>
-							<td>城市：</td>
-							<td>
-								<select name="city" id="city">
-									<option value="beijing">北京</option>
-									<option value="shanghai" selected="selected">上海</option>
-									<option value="guangzhou">广州</option>
-									<option value="shenzhen">深圳</option>
-									<option value="luoyang">洛阳</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td>爱好：</td>
-							<td>
-								<input type="checkbox">跑步
-								<input type="checkbox">唱歌
-								<input type="checkbox">跳舞
-								<input type="checkbox">学习
-								<input type="checkbox">其他
-							</td>
-						</tr>
-						<tr>
-							<td colspan="2">
-								<fieldset>
-									<legend>健康信息</legend>
-									身高：<input type="text" />
-									体重：<input type="text" />
-								</fieldset>
-							</td>
-						</tr>
-						<tr>
-							<td>个人描述：</td>
-							<td>
-								<textarea rows="3" cols="30">The cat was playing in the garden. </textarea>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-				<input type="submit" value="submit">
-			</form>	
-		</nav>
-		<footer>版权所有@@luna</footer>
   </template>
   <script>
     // 您的新元素扩展 Polymer.Element 基类
