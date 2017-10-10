@@ -17,7 +17,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <style include="shared-styles">
       :host {
         display: block;
-
         padding: 10px;
       }
     </style>
@@ -30,10 +29,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <p>&nbsp&nbsp一个人如何对待他的<em>时间</em>，决定了他可以成为什么样的人。</p>
     <p>一起来学习:</p>
 			<ul>
-        <li><paper-checkbox></paper-checkbox>先学习html</li>
-				<li><paper-checkbox></paper-checkbox>接着学习css</li>
-				<li><paper-checkbox></paper-checkbox>再学习javascript</li>
-				<li><paper-checkbox></paper-checkbox>学个简单的小框架</li>
+        <li><paper-checkbox></paper-checkbox>html</li>
+				<li><paper-checkbox></paper-checkbox>css</li>
+				<li><paper-checkbox></paper-checkbox>javascript</li>
+				<li><paper-checkbox></paper-checkbox>polymer</li>
       </ul>
       <ul class="nav-group">
         <li class="wangyi"><a href="http://music.163.com/">网易云音乐</a></li>
@@ -41,6 +40,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <li class="shopping"><a href="https://juejin.im/">掘金</a></li>
         <li class="improve"><a href="http://www.w3school.com.cn">W3school</a></li>
 	  	</ul>
+    </div>
+    <div class="card">
+      <div class="circle">2</div>
+      <h1>Polymer</h1>
+      <h2>小收获</h2>
+    <p>一、划分小组件:</p>
+			<ol>
+        <li>最外面的入口index.html不用写太多只有一个主要的组件组成，例如：<br>
+          <img src="./static/images/example1-1.jpg"><br>
+        </li>
+				<li>主页面my-app.html则是由许多Shadow DOM组成</li>
+        <li>需要跳转的页面需要分开写，每个页面如果有相同的样式，可以写一个html只包含这几个相同样式的class，样式页面例子（polymer官网提供）：<br>
+          <img src="./static/images/example1-2.jpg"><br>
+          页面引入这个样式，先引入这个html，样式继承include="dom-module id"，页面直接引用样式定义好的class name。<br>
+          <img src="./static/images/example1-3.jpg"><br>
+        </li>
+      </ol>
     </div>
   </template>
 
