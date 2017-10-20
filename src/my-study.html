@@ -45,7 +45,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <div class="circle">2</div>
       <h1>Polymer</h1>
       <h2>小收获</h2>
-    <p>一、划分小组件:</p>
+      <p>自定义元素</p>
+      <ol>
+        <li>Custom element names. By specification, the custom element's name must start with a lower-case ASCII letter and must contain a dash (-). There's also a short list of prohibited element names that match existing names. For details, see the Custom elements core concepts section in the HTML specification.</li>
+        <li>
+          <img src="./static/images/polymer-custom element-1.jpg"><br>
+        </li>
+      </ol>
+      <p>一、划分小组件:</p>
 			<ol>
         <li>最外面的入口index.html不用写太多只有一个主要的组件组成，例如：<br>
           <img src="./static/images/example1-1.jpg"><br>
@@ -55,6 +62,52 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <img src="./static/images/example1-2.jpg"><br>
           页面引入这个样式，先引入这个html，样式继承include="dom-module id"，页面直接引用样式定义好的class name。<br>
           <img src="./static/images/example1-3.jpg"><br>
+        </li>
+      </ol>
+      <p>二、组件内部的值传到外面</p>
+      <ol>
+        <li>一种是简单的传到外面使用：
+          <code>
+            <pre>
+              组件内部代码my-example.html：（如果是点击生效）
+              clickEvent() {
+        　　　　this.dispatchEvent(new CustomEvent('_nowClick', {detail: {kicked: this.value}}));
+      　　　　}
+              外部引用index.html：
+              document.querySelector('my-example').addEventListener('clickEvent', function (e) {
+        　　　　console.log(e.detail.kicked); //打印出来this.value
+    　　　　　})
+            </pre>
+          </code>
+        </li>
+        <li>
+          另一种是实时变化的值传到外面使用：
+          <code>
+            <pre>
+              组件内部代码my-example.html：
+              dom：
+              　value="{{ val::input }}"
+              事件：
+              static get observers() {
+        　　　　return [
+            　　　'updateVal(val)'
+        　　　　]
+      　　　　}
+
+      　　　　updateVal(val) {
+        　　　　this.value = this.val;//内部赋值给外部的value
+        　　　　this.dispatchEvent(new CustomEvent('newValue', {detail: {kicked: this.value}}));
+      　　　　}
+
+      　　　　外部引用index.html：
+              dom：
+              value=""
+              事件：
+      　　　　document.querySelector('my-example').addEventListener('newValue', function (e) {
+        　　　　console.log(e.detail.kicked);
+      　　　　});
+            </pre>
+          </code>
         </li>
       </ol>
     </div>
