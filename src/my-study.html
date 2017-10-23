@@ -110,6 +110,67 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </code>
         </li>
       </ol>
+    <p>三、样式的选择:</p>
+    <p>比较规范的写法是css里面是纯样式，html中dom结构，js中是一些事件，例如给一个input框通过type配置</p>
+			<ol>
+        <li>在css里给不同的class写两个不同的input样式，代码如下：
+          <code>
+            <pre>
+            .default {
+              width: 120px;
+              height: 56px;
+              border: none;
+              border-radius: 3px;
+              background-color: #fff;
+              border-style: solid;
+              border-width: 1px;
+              border-color: #ccc; 
+              box-shadow: 0 0 2px #ccc; 
+              padding-right: 11px;
+            } 
+
+            .active {
+              width: 90px;
+              height: 40px;
+              border: none;
+              border-radius: 3px;
+              background-color: #fff;
+              border-style: solid;
+              border-width: 1px;
+              border-color: #fc8e76;
+              box-shadow: 0 0 2px #ccc; 
+              font-size: 14px;
+              color: #EE5930;
+              padding-right: 11px;
+            }  
+            </pre>
+          </code>
+        </li>
+				<li>html中给一个input　ID，代码如下：
+          <code>
+            <pre>
+              button id="basicIconButton" on-click="_nowClick"
+            </pre>
+          </code>
+        </li>
+        <li>js里通过ID获取input并修改其class，代码如下：
+          <code>
+            <pre>
+            ready() {
+              super.ready();
+              switch (this.type) {
+                case '1':
+                this.$.basicIconButton.className = 'active';
+                break;
+              default:
+                this.$.basicIconButton.className = 'default';
+              break;
+              }
+            }
+            </pre>
+          </code>
+        </li>
+      </ol>  
     </div>
   </template>
 
