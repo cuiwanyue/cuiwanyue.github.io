@@ -8,11 +8,33 @@
         display: block;
         padding: 16px;
       }
+			table {
+				border: 1px solid #ccc;
+				border-radius: 8px;
+				border-spacing: 0; /* 边框间隙为0 */
+        border-collapse: separate; /* 边框不和合并 */
+				overflow: hidden;
+			}
+			th, td {
+        border: 1px solid #ccc; /* 设置为红色，以区别 table 的边框 */
+        border: 1px solid #ccc;
+      }
+			
+			/* 最后一列单元格的右边框与最后一排单元格的下边框需要去掉 不生效*/
+			/* .table th:last-child,
+      .table td:last-child {
+        border-right: 0;
+      }
+
+      .table tr:last-child td{
+         border-bottom: 0;
+      } */
+
     </style>
 　  <div class="card">
 			<div class="book-list">
 				<h2>我看过的书</h2>
-				<span>根据看得时间排列</span>
+				<span>根据看得时间排列2017年</span>
 				<ol>
 					<li>《再美也美不过想象》（人的想象力在爱情来临的时候是最强大的。当你爱上一个人的时候，在你的脑海中，你早就和他/她过完了一辈子。）</li>
 					<li>《不曾走过 怎会懂得》（亲爱的，走吧，有些路你不走下去，就不知道它有多美。）</li>

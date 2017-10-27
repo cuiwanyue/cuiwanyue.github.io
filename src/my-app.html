@@ -67,6 +67,55 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         color: black;
         font-weight: bold;
       }
+
+      .interesting {
+        width: 200px;
+        height: 100px;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, 0);
+        overflow: hidden;
+        text-align: center;
+        line-height: 100px;
+      }
+      .interesting::before {
+        content: "";
+        position: absolute;
+        background: rgba(24, 142, 238, .7);
+        animation: waverotate 3s infinite linear;
+        width: 200px;
+        height: 200px;
+        border-radius: 40%;
+        bottom: 30px;
+        left: 0;
+      }
+      
+      .main-title {
+        width: 120px;
+        height: 100%;
+        text-align: center;
+        line-height: 60px;
+        border-radius: 50%;
+        position:relative;
+        animation: mymove 20s infinite;
+      }
+      @keyframes mymove
+      {
+        0%   {background: linear-gradient(to right, rgba(220, 220, 169,.5), rgba(105, 105, 105,1)); left:-120px;}
+        25%  {background: linear-gradient(to right,rgba(147, 125, 247, .9), rgba(70, 59, 131, .9)); left:200px;}
+        50%  {background: linear-gradient(to right,rgba(1, 125, 147, .9), rgba(100, 209, 170, .9)); left:500px;}
+        75%  {background: linear-gradient(to right,rgba(0 ,2, 255, .9), rgba(100, 91, 216, .9)); left:800px;}
+        100% {background: radial-gradient(rgba(70, 75, 8, .9) 35%,rgba(60, 60, 16, .9) 50%,rgba(30, 32, 31,.9));; left:1200px;}
+      }
+      @keyframes waverotate
+      {
+        0% {transform: rotateZ(10deg)};
+        20% {transform: rotateZ(25deg)};
+        40% {transform: rotateZ(40deg)};
+        60% {transform: rotateZ(65deg)};
+        80% {transform: rotateZ(80deg)};
+        100% {transform: rotateZ(100deg)};
+      }
     </style>
 
     <app-location route="{{route}}" url-space-regex="^[[rootPath]]"></app-location>
@@ -80,7 +129,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <!-- Drawer content -->
       <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
         <app-toolbar>
-          <img src="./static/images/0.jpg">
+          <div class="interesting">Luna</div> 
         </app-toolbar>
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
           <a name="emulate" href="[[rootPath]]study">学习区</a>
@@ -96,7 +145,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <app-header slot="header" condenses reveals effects="waterfall">
           <app-toolbar>
             <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
-            <div main-title>个人小总结</div>
+            <div class="main-title">个人小总结</div>
           </app-toolbar>
         </app-header>
 
