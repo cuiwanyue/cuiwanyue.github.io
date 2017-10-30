@@ -74,7 +74,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         　　　　this.dispatchEvent(new CustomEvent('_nowClick', {detail: {kicked: this.value}}));
       　　　　}
               外部引用index.html：
-              document.querySelector('my-example').addEventListener('clickEvent', function (e) {
+              document.querySelector('my-example').addEventListener('_nowClick', function (e) {
         　　　　console.log(e.detail.kicked); //打印出来this.value
     　　　　　})
             </pre>
