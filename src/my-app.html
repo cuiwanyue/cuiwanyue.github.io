@@ -26,6 +26,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="lazy-import" href="my-life.html">
 <link rel="lazy-import" href="my-tittle-tattle.html">
 <link rel="lazy-import" href="my-sundries.html">
+<link rel="lazy-import" href="my-article-info.html">
 <link rel="lazy-import" href="my-view404.html">
 
 <dom-module id="my-app">
@@ -89,7 +90,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         bottom: 30px;
         left: 0;
       }
-      
+
       .main-title {
         width: 120px;
         height: 100%;
@@ -129,7 +130,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <!-- Drawer content -->
       <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
         <app-toolbar>
-          <div class="interesting">Luna</div> 
+          <div class="interesting">Luna</div>
         </app-toolbar>
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
           <a name="emulate" href="[[rootPath]]study">学习区</a>
@@ -158,6 +159,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <my-view2 name="life"></my-view2>
           <my-view3 name="tittle-tattle"></my-view3>
           <my-new-view name="sundries"></my-new-view>
+          <!-- 查看文章详情 -->
+          <my-article-info name="article-info" detail=""></my-article-info>
           <my-view404 name="view404"></my-view404>
         </iron-pages>
       </app-header-layout>
@@ -166,6 +169,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <script>
     class MyApp extends Polymer.Element {
+
       static get is() { return 'my-app'; }
 
       static get properties() {
@@ -173,15 +177,48 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           page: {
             type: String,
             reflectToAttribute: true,
-            observer: '_pageChanged',
+            observer: '_pageChanged'
           },
           routeData: Object,
           subroute: String,
           // This shouldn't be neccessary, but the Analyzer isn't picking up
           // Polymer.Element#rootPath
-          rootPath: String,
+          rootPath: String
         };
       }
+
+      ready() {
+        super.ready();
+        var that = this;
+
+        this.shadowRoot.querySelector('my-view1').addEventListener('articleInfo', function (e) {
+          that.shadowRoot.querySelector('my-article-info').setAttribute('detail', JSON.stringify(e.detail));
+        });
+
+        this.shadowRoot.querySelector('my-view2').addEventListener('articleInfo', function (e) {
+          that.shadowRoot.querySelector('my-article-info').setAttribute('detail', JSON.stringify(e.detail));
+        });
+
+        this.shadowRoot.querySelector('my-view3').addEventListener('articleInfo', function (e) {
+          that.shadowRoot.querySelector('my-article-info').setAttribute('detail', JSON.stringify(e.detail));
+        });
+
+        this.shadowRoot.querySelector('my-new-view').addEventListener('articleInfo', function (e) {
+          that.shadowRoot.querySelector('my-article-info').setAttribute('detail', JSON.stringify(e.detail));
+        });
+
+        // var time = window.setInterval(function() {
+        //   if(that.shadowRoot.querySelector('my-view1')) {
+        //
+        //     window.clearInterval(time);
+        //     that.shadowRoot.querySelector('my-view1').addEventListener('articleInfo', function (e) {
+        //       that.shadowRoot.querySelector('my-article-info').setAttribute('detail', JSON.stringify(e.detail));
+        //     });
+        //   }
+        // }, 1000);
+
+      }
+
 
       static get observers() {
         return [
@@ -213,6 +250,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       _showPage404() {
         this.page = 'view404';
       }
+
+
+
     }
 
     window.customElements.define(MyApp.is, MyApp);

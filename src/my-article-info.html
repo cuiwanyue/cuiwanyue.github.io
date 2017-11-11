@@ -1,0 +1,95 @@
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-checkbox/paper-checkbox.html">
+<link rel="import" href="article-style.html">
+
+<dom-module id="my-article-info">
+  <template>
+    <style include="article-style">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+    </style>
+
+    <div class="card">
+      <h1>
+        <span>{{ article.title }}</span>
+        <span style="font-size:14px;">[类别：{{ article.category }}]</span>
+        <span style="font-size:14px;"> [创建于：{{ article.created }}]</span>
+      </h1>
+      <hr>
+      <article></article>
+      <hr>
+      <p>
+        <span>标签：</span>
+        <template is="dom-repeat" items="{{ article.tags }}" as="tag">
+          <span>{{ tag }}</span> &nbsp;&nbsp;&nbsp;
+        </template>
+      </p>
+    </div>
+
+  </template>
+
+  <script>
+    class MyArticleInfo extends Polymer.Element {
+      static get is() { return 'my-article-info'; }
+
+      static get properties() {
+        return {
+          detail: {
+            type: String,
+            observer: '_init'
+          },
+          article: {
+            type: Object
+          },
+          content: {
+            type: String
+          }
+        };
+      }
+
+      _init(articleInfo) {
+        // console.info('this.detail ===> ', this.detail);
+        if(!this.detail) {
+          return;
+        }
+        this.article = JSON.parse(this.detail);
+        var that = this;
+        $.ajax({
+          method: 'GET',
+          url: this.article.path,
+          contentType: 'text/plain',
+          success: function(response) {
+            // 解析 md 文件
+            that.shadowRoot.querySelector('article').innerHTML = window.marked.parse(response);
+            // that.content = window.marked.parse(response);
+
+            // 添加评论
+            // addMent(name);
+
+            // 添加样式，代码高亮
+            setTimeout(function() {
+              // console.info(that.shadowRoot.querySelectorAll('code'));
+              var codes = that.shadowRoot.querySelectorAll('code');
+              for(var i = 0, len = codes.length; i < len; ++ i) {
+                hljs.highlightBlock(codes[i]);
+              }
+              // that.shadowRoot.querySelectorAll('code').each(function(i, block) {
+              //   hljs.highlightBlock(block);
+              // });
+            }, 10);
+          }
+        });
+      }
+
+
+
+
+    }
+
+    window.customElements.define(MyArticleInfo.is, MyArticleInfo);
+  </script>
+</dom-module>

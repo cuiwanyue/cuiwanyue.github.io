@@ -21,17 +21,58 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
     </style>
 
-    <div class="card">
-      <div class="circle">2</div>
-      <h1>生活中的酸甜苦辣</h1>
-      <h2>自己慢慢体会！</h2>
-      <p>现在我24岁我很喜欢现在的生活状态，学习、运动、读书、画画、养草（做任何想做的事情），虽然我单身。<br>－－2017/10/10</p>
-     </div>
+
+
+    <template is="dom-repeat" items="{{ articles }}" as="article">
+      <div class="card">
+        <div class="circle">{{ _countIndex() }}</div>
+        <h1>
+          <span>[名称：{{ article.title }}]</span>
+          <span style="font-size:14px;">[类别：{{ article.category }}]</span>
+          <span style="font-size:14px;"> [创建于：{{ article.created }}]</span>
+        </h1>
+        <!-- <h2>时间之尺</h2> -->
+        <p>{{ article.desc }}
+          <a href="[[rootPath]]article-info" on-click="_articleInfo">查看详情。。。</a>
+        </p>
+        <p>
+          <span>标签：</span>
+          <template is="dom-repeat" items="{{ article.tags }}" as="tag">
+            <span>{{ tag }}</span> &nbsp;&nbsp;&nbsp;
+          </template>
+        </p>
+
+      </div>
+    </template>
+    <!-- <template if="{{ articles.length === 0 }}">
+      <h1>xxx</h1>
+    </template> -->
   </template>
 
   <script>
     class MyView2 extends Polymer.Element {
       static get is() { return 'my-view2'; }
+
+      static get properties() {
+        return {
+          articles: {
+            type: Array,
+            value: data.life
+          },
+          index: {
+            type: Number,
+            value: 0
+          }
+        };
+      }
+
+      _countIndex() {
+        return ++ this.index;
+      }
+
+      _articleInfo(e) {
+        this.dispatchEvent(new CustomEvent('articleInfo', {detail: e.model.article}));
+      }
     }
 
     window.customElements.define(MyView2.is, MyView2);

@@ -87,6 +87,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <!-- Load webcomponents-loader.js to check and load any polyfills your browser needs -->
     <script src="bower_components/webcomponentsjs/webcomponents-loader.js"></script>
 
+    <!-- 数据 -->
+    <script src="./static/js/data.js"></script>
+
+    <!-- jquery -->
+    <script src="./static/js/jquery.min.js"></script>
+
+    <!-- marked 用于解析 markdown 文件 -->
+    <script src="./static/js/marked.js"></script>
+
+    <!-- highlight 格式化 markdown 文件，高亮代码 -->
+    <script src="./static/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- 默认风格代码 -->
+    <!-- <link rel="stylesheet" href="./static/css/default.min.css"> -->
+    <!-- sublime 风格代码 -->
+    <link rel="stylesheet" href="./static/css/monokai-sublime.min.css">
+
+    <!-- gitment 添加 评论 功能 -->
+    <script src="./static/js/gitment.browser.js"></script>
+    <link rel="stylesheet" href="./static/css/gitment.default.css">
+
     <!-- Load your application shell -->
     <link rel="import" href="src/my-app.html">
 
