@@ -153,5 +153,18 @@ ready() {
     this.$.basicLoginForm.shadowRoot.querySelector('标签')
     ```
 区别
-querySelector()：获取的是第一组件
-querySelectorAll()：获取的是所有的组件，结果是个数组
+document.querySelector()：返回文档中匹配指定的选择器组的第一个元素(使用深度优先先序遍历文档的节点 | 并且通过文档标记中的第一个元素，并按照子节点数量的顺序迭代顺序节点)
+语法：
+```
+element = document.querySelector(selectors);
+```
+element 是一个 element 对象（DOM 元素）。
+selectors 是一个字符串，包含一个或是多个 CSS 选择器 ，多个则以逗号分隔。
+
+ParentNode.querySelectorAll()：返回一个 NodeList 表示元素的列表，把当前的元素作为根与指定的选择器组相匹配
+语法：
+```
+elementList = document.querySelectorAll(selectors);
+```
+elementList 是由元素对象element组成的非动态节点列表 non-live NodeList。
+selectors 是一个或多个CSS选择器，这些选择器由逗号隔开.
