@@ -79,16 +79,16 @@ document.querySelector('my-example').addEventListener('newValue', function (e) {
 
 ```
 .default {
-    width: 120px;
-    height: 56px;  
-    border: none;
-    border-radius: 3px;
-    background-color: #fff;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #ccc;
-    box-shadow: 0 0 2px #ccc;
-    padding-right: 11px;
+  width: 120px;
+  height: 56px;  
+  border: none;
+  border-radius: 3px;
+  background-color: #fff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ccc;
+  box-shadow: 0 0 2px #ccc;
+  padding-right: 11px;
 }
 
 .active {
@@ -113,7 +113,7 @@ document.querySelector('my-example').addEventListener('newValue', function (e) {
 button id="basicIconButton" on-click="_nowClick"
 ```
 
-3. js里通过ID获取input并修改其class，代码如下获取子组件也可以用（this.shadowRoot.querySelector('标签名称')或者document.querySelector('plus-function').shadowRoot.querySelectorAll('basic-icon-button')[4].setAttribute('class', 'authori');）：
+3. js里通过ID获取input并修改其class：
 
 ```
 ready() {
@@ -128,3 +128,30 @@ ready() {
   }
 }
 ```
+补充：
+获取组件几个方法：
+1. 在index.html获取：
+    1. 直接在index.html引入的组件，用：
+    ```
+    document.querySelector('标签')
+    ```
+    2. 在index.html引入组件内部的标签，用：
+    ```
+    document.querySelector('plus-function').shadowRoot.querySelectorAll('标签')[4]
+    ```
+2. 在组件内部获取：
+    1. 获取组件里引入的组件，用：
+    ```
+    this.shadowRoot.querySelector('标签')　
+    ```
+    或者：
+    ```
+    this.$.标签ID
+    ``` 
+    2. 获取组件里引入的组件内部的标签，用：
+    ```
+    this.$.basicLoginForm.shadowRoot.querySelector('标签')
+    ```
+区别
+querySelector()：获取的是第一组件
+querySelectorAll()：获取的是所有的组件，结果是个数组
