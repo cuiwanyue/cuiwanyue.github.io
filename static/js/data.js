@@ -2,6 +2,14 @@ var data = {
   // 学习区文章列表
   study: [
     {
+      category: '提升自己',
+      path: './mds/books/提升自己.md',
+      title: '提升自己',
+      created: '2017-11-28',
+      desc: '每个月改掉一个缺点。',
+      tags: ['进步']
+    },
+    {
       category: 'English Books',
       path: './mds/books/English Books.md',
       title: '学习英语',
@@ -105,5 +113,13 @@ var data = {
     tags: ['运动', '护肤', '看书']
   }],
   // 杂物区文章列表
-  sundries: []
+  sundries: [
+    {
+    category: '时间之尺',
+    path: './mds/tattle/2017年最后一个月小目标.md',
+    title: '2017年最后三十天小目标',
+    created: '2017-11-28',
+    desc: '更好的迎接2018年，今年不留遗憾',
+    tags: ['目标']
+  }]
 };
