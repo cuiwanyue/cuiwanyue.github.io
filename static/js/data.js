@@ -116,7 +116,7 @@ var data = {
   sundries: [
     {
     category: '时间之尺',
-    path: './mds/tattle/2017年最后一个月小目标.md',
+    path: './mds/target/2017年最后一个月小目标.md',
     title: '2017年最后三十天小目标',
     created: '2017-11-28',
     desc: '更好的迎接2018年，今年不留遗憾',
